@@ -16,11 +16,13 @@ i = 0
 while True:
     i = i + 1
 
-    if i % 5 == 0:
-        l, data = inp.read()
-        a = numpy.fromstring(data, dtype='int16')
+    l, data = inp.read()
+    a = numpy.fromstring(data, dtype='int16')
 
-        current = numpy.abs(a).mean()
+    current = numpy.abs(a).mean()
+
+    if i % 5 == 0:
+        i = 0
 
         if current > 12000:
             current = 12000
